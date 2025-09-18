@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class WorkingWithArrays {
 
+    // Заполнение массива случайными числами в пределах заданных границ
     public static void filling(int[] array, int min, int max) {
         int range = max - min + 1;
 
@@ -14,8 +15,8 @@ public class WorkingWithArrays {
         }
     }
 
+    // Сортировка пузырьком (возрастание)
     public static void sort(int[] array) {
-        // Сортировка пузырьком (возрастание)
         for (int i = 0; i < array.length - 1; i++) {
             for(int j = 0; j < array.length - i - 1; j++) {
                 if(array[j + 1] < array[j]) {
@@ -27,6 +28,7 @@ public class WorkingWithArrays {
         }
     }
 
+    // Поиск минимального значения в массиве
     public static int getMinValue(int[] array) {
         int min = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -37,6 +39,7 @@ public class WorkingWithArrays {
         return min;
     }
 
+    // Поиск минимального значения в массиве
     public static double getMinValue(double[] array) {
         double min = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -47,6 +50,7 @@ public class WorkingWithArrays {
         return min;
     }
 
+    // Поиск максимального значения в массиве
     public static int getMaxValue(int[] array) {
         int max = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -57,6 +61,7 @@ public class WorkingWithArrays {
         return max;
     }
 
+    // Поиск максимального значения в массиве
     public static double getMaxValue(double[] array) {
         double max = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -67,6 +72,7 @@ public class WorkingWithArrays {
         return max;
     }
 
+    // Вычисление среднего арифметического
     public static int getAverage(int[] array) {
         int sum = 0;
         for (int i = 0; i < array.length; ++i) {
@@ -76,6 +82,7 @@ public class WorkingWithArrays {
         return sum / array.length;
     }
 
+    // Вычисление среднего арифметического
     public static double getAverage(double[] array) {
         double sum = 0;
         for (int i = 0; i < array.length; ++i) {
@@ -106,7 +113,7 @@ public class WorkingWithArrays {
         filling(array, min, max);
 
         System.out.println("Минимальное значение массива: " + getMinValue(array));
-        System.out.println("Максималдьное значение массива: " + getMaxValue(array));
+        System.out.println("Максимальное значение массива: " + getMaxValue(array));
         System.out.println("Среднее арифметическое массива: " + getAverage(array));
         System.out.println("Массив до сортировки " + Arrays.toString(array));
 
