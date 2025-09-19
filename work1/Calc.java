@@ -2,7 +2,7 @@ package work1;
 
 import java.util.Scanner;
 
-public class calc {
+public class Calc {
 
     // Разбиваем полученное выражение на 3 части
     public static String[] split(String expression) {
