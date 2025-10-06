@@ -1,4 +1,4 @@
-package wokr2.Vector;
+package work2.Vector;
 
 import static java.lang.Math.*;
 

@@ -1,4 +1,4 @@
-package wokr2.Calc;
+package work2.Calc;
 
 public class Sum extends Operation {
     public Sum(double operand1, double operand2) {

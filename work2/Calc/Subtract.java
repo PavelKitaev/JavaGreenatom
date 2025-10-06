@@ -1,4 +1,4 @@
-package wokr2.Calc;
+package work2.Calc;
 
 public class Subtract extends Operation {
     public Subtract(double operand1, double operand2) {

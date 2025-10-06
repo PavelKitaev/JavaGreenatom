@@ -1,4 +1,4 @@
-package wokr2.Calc;
+package work2.Calc;
 
 public class Degree extends Operation {
     public Degree(double operand1, double operand2) {

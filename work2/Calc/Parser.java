@@ -1,6 +1,5 @@
-package wokr2.Calc;
+package work2.Calc;
 
-import java.util.Arrays;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 

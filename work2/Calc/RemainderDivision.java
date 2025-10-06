@@ -1,4 +1,4 @@
-package wokr2.Calc;
+package work2.Calc;
 
 public class RemainderDivision extends Operation {
     public RemainderDivision(double operand1, double operand2) {

@@ -1,8 +1,6 @@
-package wokr2.Vector;
+package work2.Vector;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {

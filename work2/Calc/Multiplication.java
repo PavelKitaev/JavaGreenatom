@@ -1,4 +1,4 @@
-package wokr2.Calc;
+package work2.Calc;
 
 public class Multiplication extends Operation {
     public Multiplication(double operand1, double operand2) {

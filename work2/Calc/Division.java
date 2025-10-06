@@ -1,4 +1,4 @@
-package wokr2.Calc;
+package work2.Calc;
 
 public class Division extends Operation {
     public Division(double operand1, double operand2) {

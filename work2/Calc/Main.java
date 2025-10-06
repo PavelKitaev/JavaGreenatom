@@ -1,4 +1,4 @@
-package wokr2.Calc;
+package work2.Calc;
 
 import java.util.Scanner;
 
