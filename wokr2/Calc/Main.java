@@ -28,11 +28,20 @@ public class Main {
             }
 
             Parser parser = new Parser(expression);
-            if (parser.isValid()) {
-                Calc calc = new Calc(parser.getOperand1(), parser.getOperand2(), parser.getOperation());
-                System.out.println(calc.performOperation());
+
+            if (parser.isParse()) {
+                Validator validate = new Validator(parser.getOperand1(), parser.getOperand2(), parser.getOperation());
+                if (validate.isValid()) {
+                    Calc calc = new Calc(Double.parseDouble(parser.getOperand1()),
+                            Double.parseDouble(parser.getOperand2()),
+                            parser.getOperation());
+
+                    System.out.println(calc.performOperation());
+                } else {
+                    System.out.println("Невалидное выражение");
+                }
             } else {
-                System.out.println("Неверное выражение");
+                System.out.println("Невалидное выражение");
             }
         }
     }
