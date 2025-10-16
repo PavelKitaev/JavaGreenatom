@@ -26,28 +26,32 @@ public class Calc {
     public double performOperation() {
         Operation op = null;
 
-        switch(operation) {
-            case "+":
-                op = new Sum(operand1, operand2);
-                break;
-            case "-":
-                op = new Subtract(operand1, operand2);
-                break;
-            case "*":
-                op = new Multiplication(operand1, operand2);
-                break;
-            case "/":
-                op = new Division(operand1, operand2);
-                break;
-            case "//":
-                op = new IntegerDivision(operand1, operand2);
-                break;
-            case "^":
-                op = new Degree(operand1, operand2);
-                break;
-            case "%":
-                op = new RemainderDivision(operand1, operand2);
-                break;
+        try {
+            switch(operation) {
+                case "+":
+                    op = new Sum(operand1, operand2);
+                    break;
+                case "-":
+                    op = new Subtract(operand1, operand2);
+                    break;
+                case "*":
+                    op = new Multiplication(operand1, operand2);
+                    break;
+                case "/":
+                    op = new Division(operand1, operand2);
+                    break;
+                case "//":
+                    op = new IntegerDivision(operand1, operand2);
+                    break;
+                case "^":
+                    op = new Degree(operand1, operand2);
+                    break;
+                case "%":
+                    op = new RemainderDivision(operand1, operand2);
+                    break;
+            }
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
         }
 
         return op.calculate();

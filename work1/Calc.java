@@ -22,16 +22,10 @@ public class Calc {
     }
 
     public static double division(double a, double b) {
-        if (b == 0)
-            return 0;
-
         return a / b;
     }
 
     public static int integerDivision(double a, double b) {
-        if (b == 0)
-            return 0;
-
         return (int)(a / b);
     }
 
@@ -89,13 +83,20 @@ public class Calc {
                         System.out.println("Результат: " + multiplication(a, b));
                         break;
                     case "/":
-                        if (b == 0)
-                            System.out.println("Ошибка - деление на ноль");
-                        else
-                            System.out.println("Результат: " + division(a, b));
+                        try {
+                            double res = division(a, b);
+                            System.out.println("Результат: " + res);
+                        } catch (ArithmeticException e) {
+                            System.out.println(e.getMessage());
+                        }
                         break;
                     case "//":
-                        System.out.println("Результат: " + integerDivision(a, b));
+                        try {
+                            double res = integerDivision(a, b);
+                            System.out.println("Результат: " + res);
+                        } catch (ArithmeticException e) {
+                            System.out.println(e.getMessage());
+                        }
                         break;
                     case "^":
                         System.out.println("Результат: " + degree(a, b));
