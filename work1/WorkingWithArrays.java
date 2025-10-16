@@ -110,15 +110,18 @@ public class WorkingWithArrays {
         int max = scanner.nextInt();
 
         int[] array = new int[size];
-        filling(array, min, max);
+        try {
+            filling(array, min, max);
+            System.out.println("Минимальное значение массива: " + getMinValue(array));
+            System.out.println("Максимальное значение массива: " + getMaxValue(array));
+            System.out.println("Среднее арифметическое массива: " + getAverage(array));
+            System.out.println("Массив до сортировки " + Arrays.toString(array));
 
-        System.out.println("Минимальное значение массива: " + getMinValue(array));
-        System.out.println("Максимальное значение массива: " + getMaxValue(array));
-        System.out.println("Среднее арифметическое массива: " + getAverage(array));
-        System.out.println("Массив до сортировки " + Arrays.toString(array));
+            sort(array);
 
-        sort(array);
-
-        System.out.println("Массив после сортировки " + Arrays.toString(array));
+            System.out.println("Массив после сортировки " + Arrays.toString(array));
+        } catch (IndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+        }
     }
 }

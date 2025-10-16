@@ -3,6 +3,16 @@ package work3;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
+// Исключение
+class EngineException extends RuntimeException {
+    private String errorMessage;
+    private String transport;
+
+    public EngineException(String errorMessage, String transport) {
+        super(transport + " " + errorMessage);
+    }
+}
+
 // Перечисление типов двигателей
 enum Engine {
     ELECTRIC("Электрический"),
@@ -281,7 +291,6 @@ final class Ship extends Transport {
 }
 
 
-
 public class Main {
 
     public static Engine getEngineType() {
@@ -325,9 +334,17 @@ public class Main {
 
             switch (choice) {
                 case 1:
+                    if (transport instanceof Bike) {
+                        throw new EngineException("не имеет двигателя", transport.name);
+                    }
+
                     transport.startEngine();
                     break;
                 case 2:
+                    if (transport instanceof Bike) {
+                        throw new EngineException("не имеет двигателя", transport.name);
+                    }
+
                     transport.stopEngine();
                     break;
                 case 3:
@@ -382,7 +399,12 @@ public class Main {
                     break;
                 case 4:
                     transport = new Bike(transportName);
-                    useTransport(transport);
+                    try {
+                        useTransport(transport);
+                    } catch (EngineException e) {
+                        System.out.println(e.getMessage());
+                    }
+
                     break;
                 default:
                     System.out.println("Некорректный выбор");
